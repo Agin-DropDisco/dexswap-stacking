@@ -7,6 +7,7 @@
         "/build/*.json"
     ],
     "scripts": {
+        "deploy:rinkeby": "hardhat deploy --network rinkeby --token-registry-address 0x347663075E35D3a8BBec369aE982F7530f2B86E1 --token-registry-list-id 1 --factory-address 0x57eA77571A41719e51Fdd778145E6634f9544Db3 --verify",
         "lint:eslint": "eslint \"test/**/*.js\"",
         "lint:prettier": "prettier -l contracts/**/*.sol && prettier -l test/**/*.js",
         "lint:commit-message": "commitlint -e",

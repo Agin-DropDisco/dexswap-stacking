@@ -10,13 +10,39 @@ const infuraId = process.env.INFURA_ID;
 module.exports = {
     networks: {
         mainnet: {
-            url: `https://mainnet.infura.io/v3/${infuraId}`,
+            url: "https://mainnet.infura.io/v3/8d858a3067c74441bea2bf95dd4305b4",
         },
         rinkeby: {
-            url: `https://rinkeby.infura.io/v3/${infuraId}`,
+            url:"https://rinkeby.infura.io/v3/8d858a3067c74441bea2bf95dd4305b4",
             accounts: [process.env.PRIVATE_KEY],
+            network_id: '4',
+            gasPrice: 1000000000,
+            timeout: 100000,
         },
-// Your Custom Provider. eg: "Matic, Ropsten etc." 
+        moonalpha: {
+            url:"https://rpc.testnet.moonbeam.network",
+            accounts: [process.env.PRIVATE_KEY],
+            network_id: '1287',
+            gasPrice: 1000000000,
+            timeout: 100000,
+        },
+        oasis: {
+            url:"https://rpc.oasiseth.org:8545",
+            accounts: [process.env.PRIVATE_KEY],
+            network_id: 69,
+            gasPrice: 0,
+            gas: 1000000000,
+            timeout: 100000,
+        },
+        matic_tesnet: {
+            url:"https://rpc-mumbai.matic.today",
+            accounts: [process.env.PRIVATE_KEY],
+            network_id: 80001,
+            gasPrice: 0,
+            gas: 1000000000,
+            timeout: 100000,
+        }
+
     },
     solidity: {
         compilers: [

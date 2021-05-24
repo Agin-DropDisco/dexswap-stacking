@@ -5,7 +5,7 @@ pragma solidity ^0.6.12;
 import "./IStakableTokenValidator.sol";
 import "dexswap-core/contracts/interfaces/IDEXswapPair.sol";
 import "dexswap-core/contracts/interfaces/IDEXswapFactory.sol";
-import "dexdao-token-registry/contracts/dexTokenRegistry.sol";
+import "dexswap-registry/contracts/dexTokenRegistry.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract DefaultStakableTokenValidator is IStakableTokenValidator, Ownable {
@@ -35,7 +35,7 @@ contract DefaultStakableTokenValidator is IStakableTokenValidator, Ownable {
         dexSwapFactory = IDEXswapFactory(_dexSwapFactoryAddress);
     }
 
-    function setdexTokenRegistry(address _dexTokenRegistryAddress)
+    function setDexTokenRegistry(address _dexTokenRegistryAddress)
         external
         onlyOwner
     {
@@ -46,7 +46,7 @@ contract DefaultStakableTokenValidator is IStakableTokenValidator, Ownable {
         dexTokenRegistry = DEXTokenRegistry(_dexTokenRegistryAddress);
     }
 
-    function setdexTokenRegistryListId(uint256 _dexTokenRegistryListId)
+    function setDexTokenRegistryListId(uint256 _dexTokenRegistryListId)
         external
         onlyOwner
     {
