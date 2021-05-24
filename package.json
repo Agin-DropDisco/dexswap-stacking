@@ -7,7 +7,6 @@
         "/build/*.json"
     ],
     "scripts": {
-        "deploy:rinkeby": "hardhat deploy --network rinkeby --token-registry-address 0x347663075E35D3a8BBec369aE982F7530f2B86E1 --token-registry-list-id 1 --factory-address 0x57eA77571A41719e51Fdd778145E6634f9544Db3 --verify",
         "lint:eslint": "eslint \"test/**/*.js\"",
         "lint:prettier": "prettier -l contracts/**/*.sol && prettier -l test/**/*.js",
         "lint:commit-message": "commitlint -e",
@@ -20,12 +19,12 @@
         "postpack": "rimraf ./*.sol"
 
     },
-    "author": "Agin DropDisco <gin.dropdisco@gmail.com>",
+    "author": "Agin DropDisco || gin.dropdisco@gmail.com",
     "license": "GPL-3.0",
     "dependencies": {
         "@openzeppelin/contracts": "^3.2.0",
-        "dexswap-registry": "git://github.com/Agin-DropDisco/dexswap-registry.git",
-        "dexswap-core": "git://github.com/Agin-DropDisco/dexswap-core.git",
+        "dexswap-registry": "git://github.com/Agin-DropDisco/dexswap-registry.git#v.0.1",
+        "dexswap-core": "git://github.com/Agin-DropDisco/dexswap-core.git#v.0.1",
         "erc20-staking-rewards-distribution-contracts": "^0.5.0"
     },
     "devDependencies": {
