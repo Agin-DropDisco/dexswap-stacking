@@ -19,7 +19,7 @@
         "postpack": "rimraf ./*.sol"
 
     },
-    "author": "Agin DropDisco <gin.dropdisco@gmail.com>",
+    "author": "Agin DropDisco || gin.dropdisco@gmail.com",
     "license": "GPL-3.0",
     "dependencies": {
         "@openzeppelin/contracts": "^3.2.0",

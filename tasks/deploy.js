@@ -1,19 +1,11 @@
 const { task } = require("hardhat/config");
 
-task(
-    "deploy",
-    "Deploys the whole contracts suite and verifies source code on Etherscan"
-)
+task( "deploy", "Deploys the whole contracts suite and verifies source code on Etherscan" )
+
     .addParam("tokenRegistryAddress", "The token registry address")
-    .addParam(
-        "tokenRegistryListId",
-        "The token registry list id to be used to validate tokens"
-    )
+    .addParam( "tokenRegistryListId", "The token registry list id to be used to validate tokens" )
     .addParam("factoryAddress", "The address of swapper's pairs factory")
-    .addFlag(
-        "verify",
-        "Additional (and optional) Etherscan contracts verification"
-    )
+    .addFlag( "verify",  "Additional (and optional) Etherscan contracts verification")
     .setAction(async (taskArguments, hre) => {
         const {
             tokenRegistryAddress,
@@ -59,7 +51,7 @@ task(
         }
 
         const swapperERC20StakingRewardsDistributionFactory = hre.artifacts.require(
-            "swapperERC20StakingRewardsDistributionFactory"
+            "SwapperERC20StakingRewardsDistributionFactory"
         );
         const factory = await swapperERC20StakingRewardsDistributionFactory.new(
             rewardTokensValidator.address,
@@ -75,12 +67,16 @@ task(
             });
         }
 
-        console.log(
-            `reward tokens validator deployed at address ${rewardTokensValidator.address}`
-        );
-        console.log(
-            `stakable token validator deployed at address ${stakableTokenValidator.address}`
-        );
+        console.log(`--------------------------------------------------------------------------`);
+        console.log( `reward tokens validator deployed at address ${rewardTokensValidator.address}` );
+        console.log(`--------------------------------------------------------------------------`);
+
+        console.log(`--------------------------------------------------------------------------`);
+        console.log( `stakable token validator deployed at address ${stakableTokenValidator.address}` );
+        console.log(`--------------------------------------------------------------------------`);
+
+        console.log(`--------------------------------------------------------------------------`);
         console.log(`factory deployed at address ${factory.address}`);
-        console.log(`source code verified`);
+        console.log(`--------------------------------------------------------------------------`);
+        console.log(`DONE : ALL SOURCE IS VERIFIED`);
     });

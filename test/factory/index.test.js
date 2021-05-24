@@ -4,7 +4,7 @@ const { expect } = require("chai");
 const { createswapperPair, getOrderedTokensInPair } = require("../utils");
 
 const swapperERC20StakingRewardsDistributionFactory = artifacts.require(
-    "swapperERC20StakingRewardsDistributionFactory"
+    "SwapperERC20StakingRewardsDistributionFactory"
 );
 const ERC20StakingRewardsDistribution = artifacts.require(
     "ERC20StakingRewardsDistribution"
