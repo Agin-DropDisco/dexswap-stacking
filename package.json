@@ -7,6 +7,9 @@
         "/build/*.json"
     ],
     "scripts": {
+        "deploy:rinkeby": "hardhat deploy --network rinkeby --token-registry-address 0x9459982f4bD9D97a1A1463a48af5d63023344718 --token-registry-list-id 1 --factory-address 0x3e2eEfAc800f084a750E7799DF381468048a032c --verify",
+        "deploy:matic": "hardhat deploy --network matic --token-registry-address 0x7314b6d42ddcA4B7fBe1E34925672e58D962EF7D --token-registry-list-id 1 --factory-address 0xDE6C13FBFCB1eD555905c284a5Ab3a41dc477F08",
+        "deploy:moonalpha": "hardhat deploy --network moonalpha --token-registry-address 0x48A6fb083d5539fD39D127ba2c418ceDD25Ea2d0 --token-registry-list-id 1 --factory-address 0x3e2eEfAc800f084a750E7799DF381468048a032c",
         "lint:eslint": "eslint \"test/**/*.js\"",
         "lint:prettier": "prettier -l contracts/**/*.sol && prettier -l test/**/*.js",
         "lint:commit-message": "commitlint -e",
@@ -17,15 +20,16 @@
         "compile": "rimraf ./build && rimraf ./artifacts && hardhat compile && mkdirp build && copyfiles -f -E ./artifacts/contracts/*.sol/*.json ./build && rimraf ./build/*.dbg.json",
         "prepack": "yarn compile && copyfiles -f -E ./contracts/*.sol ./",
         "postpack": "rimraf ./*.sol"
-
     },
-    "author": "Agin DropDisco <gin.dropdisco@gmail.com>",
+    "author": "Agin DropDisco || gin.dropdisco@gmail.com",
     "license": "GPL-3.0",
     "dependencies": {
+        "@nomiclabs/hardhat-ethers": "^2.0.2",
         "@openzeppelin/contracts": "^3.2.0",
-        "dexswap-registry": "git://github.com/Agin-DropDisco/dexswap-registry.git",
-        "dexswap-core": "git://github.com/Agin-DropDisco/dexswap-core.git",
-        "erc20-staking-rewards-distribution-contracts": "^0.5.0"
+        "dexswap-core": "git://github.com/Agin-DropDisco/dexswap-core.git#1.0.0",
+        "dexswap-registry": "git://github.com/Agin-DropDisco/dexswap-registry.git#1.0.0",
+        "erc20-staking-rewards-distribution-contracts": "^0.5.0",
+        "hardhat-etherscan-abi": "^0.1.1"
     },
     "devDependencies": {
         "@commitlint/cli": "^11.0.0",
