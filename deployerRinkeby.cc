@@ -1,0 +1,1 @@
+hardhat deploy --network rinkeby --token-registry-address 0x347663075E35D3a8BBec369aE982F7530f2B86E1 --token-registry-list-id 2 --factory-address 0xA1a8207C8F184EcD7C7246C52BC0296A3f339c38 --verify
